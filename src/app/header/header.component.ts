@@ -1,9 +1,10 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Output } from "@angular/core";
+import { DirectiveModule } from "../shared/directive/directive.module";
 
 @Component({
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, DirectiveModule],
     selector: "app-header",
     templateUrl: "./header.component.html"
 })
