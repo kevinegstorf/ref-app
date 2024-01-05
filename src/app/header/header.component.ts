@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     standalone: true,
@@ -8,6 +8,10 @@ import { Component } from "@angular/core";
     templateUrl: "./header.component.html"
 })
 export class HeaderComponent {
-  title = "My App";
   collapsed = true;
+  @Output() featureSelected = new EventEmitter<string>();
+
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
+  }
 }
